@@ -1,0 +1,170 @@
+CUESTIONARIO – SISTEMAS OPERATIVOS
+FASE 2: Preguntas 1 a 32
+Alumno: Alberto Campagna – Asunto: IFTS18_SO_2019
+
+1. ¿Qué es un Dominio según Microsoft?
+Según Microsoft, un Dominio es un nombre único, que aparece luego de la arroba @ en una dirección de e-mail, o después del www en una dirección web. Normalmente suele ser el nombre de una organización, empresa o proyecto. La idea es que sea descriptivo y sencillo de recordar.
+
+2. ¿Qué significa Active Directory?, y ¿Para qué se utiliza?
+Active Directory es la implementación de Microsoft para redes distribuidas. Se usa para administrar redes de computadoras. Usa distintos protocolos, pero los mas utilizados son DNS, DHCP y Kerberos.
+
+3. ¿Qué significa PDC, BDC en tecnología NT4?
+En tecnología Windows NT4, PDC significa Primary Domain Controller y BDC significa Backup Domain Controller.
+El PDC tenía la copia principal de las cuentas de usuarios, base de datos y era modificable. En el caso del BDC, lo q hacía era replicar la copia fiel de la PDC, con la periodicidad que el administrador requiriera.
+La función de ambas era que si el PDC fallaba, podían levantar la BDC y que tome su lugar, hasta que se arreglara la PDC y nuevamente volver a ponerla en funcionamiento.
+
+4. ¿Qué significa Domain Controler? Explique las diferencias entre un controlador de dominio Windows 2000+ superior y NT4.
+La diferencia es que a partir de Windows 2000 o superior, podemos tener los Domain Controller que consideremos necesarios. En el caso de NT4 solo eran 2, un activo y un pasivo.
+Esta mejora fue muy importante ya que permite mas redundancia y seguridad en la red Microsoft.
+
+5. Explique el uso de Relación de Confianza entre dos dominios o más y qué tipo de relaciones de confianza puede establecer (grafique).
+Una relación de confianza es un vinculo que se configura entre dos dominios diferentes, en la que un dominio permite el acceso de determinados usuarios al otro dominio. El otro dominio autenticará las cuentas de sus propios usuarios.
+
+6. Describa Forest, según Microsoft.
+Forest, según Microsoft, son uno mas árboles de dominios que no forman parte del mismo Name Space. Para usar esta funcionalidad, utiliza Kerberos.
+
+7. Defina los roles de DHCP, DNS, File Server, Print Server, IIS, Terminal Service.
+DHCP es un protocolo que asigna IPs dinámicamente a dispositivos de una red.
+DNS son los dominios de servidores, los cuales asignan un nombre mas legible y amigable a una dirección IP. Ej: www.google.com es el DNS de la IP 172.217.11.132
+File Server es un servidor de archivos que almacena y distribuye distintos tipos de archivos entre clientes de una red de computadoras. Una de las principales y más importantes características es el acceso remoto a dichos archivos.
+Print Server es un servidor de impresoras en red a gran escala que funciona como un concentrador, para conectar dichas impresoras y que puedan ser accesibles desde cualquier PC o terminal.
+IIS es un conjunto de servicios para servidores Microsoft. Se usa mucho en servidores web. Viene integrado desde WIN NT4 y es muy popular en la web.
+Terminal Services sirve para control por escritorio remoto. Con esta herramienta podemos acceder desde nuestra PC o terminal a otra remota y poder tomar control de ella.
+
+8. Explique la relación entre la Tecnología NTFS y el rol de File Server.
+La tecnología NTFS está relacionada con el File Server muy estrechamente debido a un objetivo en común: evitar el acceso a archivos o permitir, según necesario, y configurarlo debidamente.
+La complejidad de esto es que tanto mediante NTFS y File Server podemos dar/quitar permisos.  
+
+9. ¿Qué es un Raid de Disco (Arreglo de Disco) ?, y ¿Qué tipo de Raids existen?, explique Raid 0, 1 y 5.
+Los sistemas RAID permiten utilizar discos rigidos (almacenamiento) de forma redundante. Tienen como objetivo proteger la información.
+Los sistemas RAID mas populares van de 0 a 6, aunque también se pueden anidar/complementar, teniendo 2 en simultaneo. El propósito es tener sistemas RAID aun mas conservadores y seguros. Ej. RAID 0+1, RAID 5+0.
+RAID 0: Este RAID distribuye los datos equitativamente en 2 o mas discos. La ventaja es la velocidad, pero como desventaja, no tiene tolerancia a error.
+RAID 1: Este RAID propone la redundancia. Con 2 discos, el 2do disco lo que hace es reflejar la misma información del disco. Con este tipo de RAID tendremos mas seguridad, pero como desventaja, es un sistema mas caro de implementar. 
+RAID 5: Divide datos a nivel de bloque, que distribuye la información de paridad entre todos los discos. Necesita un mínimo de 3 discos para ser implementado y es muy popular debido a su bajo costo. Técnicamente, no tiene un límite de discos, aunque se suele implementar con un máximo de discos estipulado previamente. 
+
+10. ¿Qué diferencia hay entre Alta Disponibilidad, Redundancia y Contingencia?
+ALTA DISPONIBILIDAD se refiere a un sistema que requiere estar disponible 100% las 24hs del día. Para esto, se implementan distintos métodos los cuales serán descriptos a continuación. La ALTA DISPONIBILIDAD es generalmente implementada en redes y sistemas que procesan facturación, ya sea bancos, líneas aéreas, etc.
+REDUNCANCIA significa duplicar la infraestructura. Es decir, duplicar los equipos. Estos pueden funcionar uno en modo ACTIVO y otro en PASIVO, es decir a modo de que un sistema principal funcione en producción y el otro como backup. 
+CONTINGENCIA significa que este sistema redundante, en la cual tiene una infraestructura PASIVA lista para cuando sea necesaria, pasa a ser ACTIVA en caso de cualquier problema que tenga el sistema principal.
+
+11. ¿Qué significa NBL según Microsoft?
+Según Microsoft, NBL es un clúster de balanceo de carga. Su propósito es que varios servidores puedan balancear la carga de usuarios. Las siglas significan Network Load Balancing.
+
+12. ¿Para qué se utiliza un WSUS (Servidor que se utiliza para arreglar los parcheos de otros servidores)?
+Windows Server Update Services (WSUS) es una herramienta para administradores que tiene como propósito centralizar actualizaciones para todos los equipos dentro de nuestra empresa u organización.
+Mediante WSUS un administrador podrá gestionar las ultimas actualizaciones que Microsoft provee para todos sus productos, como también la instalación y actualización de parches de seguridad.
+
+13. Para que se utiliza un System Center según Microsoft.
+Un System Center es un software que sirve para administración y configuración de computadoras, servidores y teléfonos celulares desarrollados por Microsoft. También son compatibles con varios sistemas operativos como Windows, macOS, Linux o Unix.
+
+14. Defina dentro de una Arquitectura Exchange 2010 el rol de Servidor Backend y el de Servidor Frontend.
+Dentro de la arquitectura Exchange 2010, los roles eran llamados “Services”. Pero básicamente, los dos roles principales del Front-end y Back-end son:
+Front-end: Acceso del cliente al server. Es decir, el software Outlook Exchange, donde el usuario accede a sus e-mails, los envía, borra, modifica o configura según sus gustos. El Front-end interactúa con el Back-end de forma transparente para el usuario.
+Back-end: Casilla de correo del lado del servidor. Es el lugar donde se almacenan los e-mails y todo el contenido necesario para que el Front-end pueda ser proveído de la información y datos necesario. Para el cliente, el back-end es transparente, en otras palabras, no tiene acceso directo.
+
+15. Buscar una política de Backup recomendada para un servicio de Correo Exchange 2010, Investigar que recomienda utilizar Microsoft. Y que periodicidad se recomienda hacer un backup y de qué forma. Backups incrementales.
+Para Exchange 2010 es recomendando usar Windows Server Backup, el cual se tiene que instalar manualmente (no viene predeterminado). Con esta aplicación se podrá crear un .vss para hacer un Full Backup.
+De todos modos, Microsoft soporta muchos tipos de bases de datos. Microsoft recomienda hacer un backup cada 12Hs y que sean guardados por 14 días.
+Respecto a los backups incrementales, la funcionalidad es hacer backups de los nuevos archivos o modificados, en lugar de hacer un backup completo cada día o con la periodicidad que la política de backup requiera.
+NOTA: Alternativamente, pero esto ya no es un sistema de backup de administradores, también se puede crear un .pst para backup local de e-mails.
+
+16. ¿Qué herramientas de medición de performance se utiliza en un servidor Microsoft?
+La herramienta principal de medición de performance para un servidor Microsoft es Server Performance Advisor (SPA).
+También existe el ctsTraffic (tráfico de cliente – servidor), el Monitor Performance y el Event Viewer que es para ver logs, en caso de algún problema y puede ayudar a solucionar problemas de performance.
+
+17. ¿Cuántos tipos de Grupos de usuarios existen en un dominio Microsoft y con qué finalidad se utiliza cada uno de ellos?
+Los grupos que existen son Universal, global y domain local. Un grupo local puede tener n cantidad de grupos globales y un global nunca puede usar un local. Estos grupos se diferencian dependiendo cual se use, puede tener relaciones de confianza con otro dominio. 
+Los grupos globales pertenecen a un mismo dominio y otros grupos globales del mismo dominio. En cambio, grupos locales pueden ser de cualquier dominio o cualquier otro dominio con relación de confianza establecida.
+También existen los grupos de seguridad, los cuales tienen muchos tipos diferentes de grupos dependiendo su uso.
+
+18. ¿Qué es ITIL? Y explique los distintos nombres de ITIL.
+ITIL es el acrónimo de Biblioteca de Infraestructura de Tecnologías de la información. ITIL es usado para mejores prácticas de la gestión de servicios de tecnología. (ITSM)
+
+19. ¿Qué significa SLA, SLO y qué diferencias hay entre ellos?
+SLA (Service Level Agreement) es la definición al cual se llega entre entre un proveedor y un cliente, con sus detalles y características.
+SLO (Service Level Objective) define el objetivo que se deberá alcanzar entre ambas partes.
+También el SLA define las severidades de los incidentes y los tiempos de respuesta que deberán tener como mínimo para cumplir con los objetivos.
+
+20. Cuáles son los roles importantes dentro del módulo OSA de ITIL
+La calificación de soporte operativo y análisis de ITIL OSA es parte de los módulos de capacidad intermedia, y proporciona una guía detallada para obtener el mayor valor para el negocio / cliente del servicio de TI. Los roles más importantes que cubre son desde la etapa de Operación del Servicio del ciclo de vida del servicio ITIL.
+
+21. Defina que es, según ITIL: Un incidente, un Requerimiento de Servicio (SR), un Cambio (Change), un Problema y Eventos. También que significa tipificar y categorizar según la criticidad un Ticket.
+Según ITIL, estos son los diferentes tipos de eventos que pueden ocurrir:
+Incidente IN: Es cuando ocurre un problema no esperado ni programado. Se abre un ticket de incidente y el mismo es transferido al área correspondiente. Es el grupo de incidentes el que es responsable de administrar estos casos.
+Requerimiento SR: Un service request es un requerimiento de información o un aviso, para cambios programados o de bajo riesgo y relativamente comunes. Normalmente los atiende la mesa de ayuda y no requiere un RFC.
+Cambio CH: Un cambio es un ticket el cual es abierto para realizar cualquier cambio, update, upgrade o modificación en en un sistema. El mismo es abierto con antelación y es algo programado. Puede tener distintos tipos de prioridad, dependiendo la emergencia o no para realizar dicho cambio.
+Problema PR: Un problema es es un ticket que representa la causa de uno o mas incidentes. En este caso, envuelve problemas de hardware, software y/o procesos, o incluso todo junto. Puede requerir la participación de una o mas áreas.
+
+22. Según ITIL cuál es el Soporte de Primer Nivel y focal de los Usuarios.
+El Soporte de Primer nivel (1st Level Support) es el encargado de registrar y clasificar incidentes recibidos y tomar acción inmediata para corregir dicho incidente.
+Si es necesario, Level 1 transferirá el problema a Level 2. Además, Level 1 procesa Service Requests y mantiene informado a los usuarios de el estado de los incidentes.
+
+23. Según ITIL que significa Self Service y CMDB.
+El portal de Self-Service se usa para que los usuarios puedan resolver problemas sin intervención de los niveles de soporte. Es mas económico y puede solucionar problemas de forma mas rápida para problemas simples.
+En el caso del CMCB (Configuration Management DataBase) es una base de datos donde administrar y gestionar todos los elementos de la compañía, necesarios para dar servicios. Es una base de conocimiento global la cual contiene todo lo pertinente y útil para la compañía. Los elementos pueden interactuar entre si y son generalmente muy útiles para solucionar incidentes o problemas.
+
+24. Especifique los Temas tratados en los Módulos OSA de ITIL. OSA (Como mantener la Operación).
+OSA (Operation Support and Analisys) es el módulo intermedio de ITIL y contiene los siguientes temas:
+•	Configuration Manager
+•	Availability Manager
+•	System Software
+•	Applications Support
+•	IT Operations Manager
+•	Network Control and Operation
+•	Database Administrator
+•	Problem Manager
+•	Network Support
+
+25. Explique las normas de seguridad PCI.
+Las normas de seguridad PCI son normas de seguridad de datos para tarjetas de pago. Fue desarrollado por las compañías de tarjeta de débito y crédito más importantes del mundo.
+Estas normas procesan, almacenan y transmiten datos de tarjetas de forma segura y efectiva.
+
+Algunos de los requisitos son:
+1.	Desarrollar y mantener una red segura.
+2.	Proteger los datos de los propietarios de tarjetas.
+3.	Mantener un programa de gestión de vulnerabilidades.
+4.	Implementas medidas sólidas de control de acceso.
+5.	Monitorizar y probar regularmente las redes
+6.	Manteener una política de seguridad de la información.
+
+26. Explique las normas ISO 9001
+Las normas ISO 9001 determinan los requisitos para un sistema de gestión de la calidad. Pueden utilizarse en organizaciones, sin importar el rubro de dicha organización, sea pública o privada, para su posterior certificación.
+Sus requisitos y estructura son: (Nueva versión ISO 9001:2015)
+
+1.	Objeto y campo de aplicación
+2.	Referencias Normativas
+3.	Términos y Definiciones
+4.	Contexto de la Organización
+5.	Liderazgo
+6.	Planificación
+7.	Apoyo
+8.	Operación
+9.	Evaluación del Desempeño
+10.	Mejora
+
+27. Explique porque una empresa se Certifica en SOX.
+Una empresa se certifica en SOX para promover la seguridad y transparencia en protección al inversionista.
+Es especialmente útil para empresas que cotizan en bolsa de valores, evitando alteraciones dudosas. La mayor finalidad es evitar fraudes y riesgos de bancarrota, protegiendo al inversionista.
+
+28. Que herramientas (marcas) de virtualización de server se utilizan en el mercado, nombre como mínimo 3
+Las 3 marcas mas importantes son VMWare y Virtual Box. Luego existen otras como VSphere, Kernel-Based Virtual machine, Citrix Hipervisor o Amazon Elastic Compute Cloud.
+
+29. Defina la tecnología VDI dentro dentro de una infraestructura virtual
+La tecnología VDI significa Virtual Desktop Infrastructure, es la confluencia de la tecnología de virtualización de servidores y la de escritorio remoto.
+Su objetivo es justamente poder conectarse de forma remota a servidores virtuales. Esto evita tener que estar físicamente en el lugar para poder operar dicho servidor.
+
+30. Defina RDS según Microsoft
+RDS significa Remote Desktop Services y es la parte principal de VDI. RDS logra que el acceso remoto sea la solución mas flexible. Existen varios tipos de roles para la arquitectura RDS. 
+Un usuario final debe acceder a una URL de RDS, la cuál será la URL q tiene las aplicaciones necesarias. A su vez, la interfaz será el RDWA (Remote Desktop Web Access). Configurada a través de IIS (Internet Information Services), hoy en día con SSL/TLS implementado, para conexiones seguras.
+
+31. Que diferencias de uso aplica para RDS vs VMware.
+La principal diferencia radica en como se presentan los escritorios remotos. Uno usa sesiones y el otro conecta usuarios a clientes de escritorio completos (RDS).
+Luego existen varias diferencias, pero mayormente es en como se gestionan las sesiones. En terminal Services de Microsoft, las sesiones son instancias de Windows Server, por lo tanto, quedan aisladas entre un usuario y otro.
+En cambio, en VDI, se puede definir un Windows Server, como cualquier otro también. Ahí correrán las máquinas virtuales que deseen, o que el hardware existente soporte.
+
+32. Que características tienen los distintos niveles de TIER 1 a 4 de datacenter.
+TIER 1: Es un centro de datos Básico. No tiene redundancia en sus componentes vitales. Es optativo tener suelos elevados o generadores auxiliares UPS. Un TIER 1 es normalmente la Mesa de Ayuda / Helpdesk.
+TIER 2: Ya tienen redundancia en sistemas vitales, suelos elevados y generadores auxiliares UPS. Ya tienen tolerancia a fallos y normalmente son áreas de producción que requieren un online 7x24.
+TIER 3: Además de los requisitos de TIER 2, un TIER 3 tiene niveles importantes de tolerancia a fallos al contar con todos los equipamientos básicos con redundancia incluida en el suministro eléctrico.
+Todos los servidores deberían contar con doble fuente y para que el Datacenter no requiera paradas para operaciones de mantenimiento básicas.
+TIER 4: Es el nivel mas exigente. Por ejemplo, tiene varias líneas de distribución eléctrica y de refrigeración. También cuentan con un grupo electrógeno con autonomía considerable (incluso uno principal y otro alternativo).
